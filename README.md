@@ -13,6 +13,8 @@ https://flask-russian-docs.readthedocs.io/ru/latest/installation.html#installati
 
 After the installation you may start it from the root folder and open http://localhost:5000 
 
+[https://blog.miguelgrinberg.com/post/how-to-create-a-react--flask-project][flask-setup]
+
 ### `npm start-front`
 
 install all react dependencies with command **npm install**
