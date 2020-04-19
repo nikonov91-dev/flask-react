@@ -1,17 +1,12 @@
-from flask import Flask, request
-import time, json, os, signal
+from flask import Flask
+from config import Config
+from flask_sqlalchemy import SQLAlchemy
+# from flask_migrate import Migrate
+# from app.routes import *
+# from . import models
+
 
 app = Flask(__name__)
-
-@app.route('/helloWorld', methods=['GET'])
-def get_home():
-    return {'payload': 'helloworld'}
-
-@app.route('/login', methods=['GET', 'POST'])
-def get_auth():
-    return {'payload': 'hello from authpage'}
-
-@app.route('/stopServer', methods=['GET'])
-def stopServer():
-    os.kill(os.getpid(), signal.SIGINT)
-    return { "success": True, "message": "Server is shutting down..." }
+app.config.from_object(Config)
+db = SQLAlchemy(app)
+# migrate = Migrate(app, db)
