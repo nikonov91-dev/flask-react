@@ -16,6 +16,7 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
+    "start": "react-scripts start",
     "start-front": "react-scripts start",
     "start-back": "cd app && venv/bin/flask run --no-debugger",
     "stop-front": "pkill --signal SIGINT f-r",

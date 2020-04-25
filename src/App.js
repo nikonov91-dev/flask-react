@@ -25,11 +25,11 @@ export default function App() {
           <Menu/>
 
           <Route exact={true} path="/">
-            <Home speech={useResponse}/>
+            <Home message={useResponse}/>
           </Route>
 
           <Route path="/login">
-            <LoginPage authresult={useResponse}/>
+            <LoginPage response={useResponse}/>
           </Route>
         </header>
       </Switch>
@@ -47,19 +47,22 @@ function Menu() {
   </nav>;
 }
 
-const Home = ({speech}) =>
+const Home = ({message}) =>
   <div>
     <p className="App-link">
       Learn React and Flask
     </p>
-    <p>Here is what Flask says: {speech}</p>
+    <p>Here is what Flask says: {message}</p>
   </div>
 ;
 
-const LoginPage = ({authresult}) =>
+const LoginPage = ({response: {hello, users}}) =>
   <div>
     <p>login page</p>
     what flask returned: <strong>{authresult}</strong>
+    <ul>
+      {users.map(user => <li>{user}</li>)}
+    </ul>
   </div>;
 
 function getPath() {
