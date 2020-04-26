@@ -1,4 +1,4 @@
-from app.app import db
+from .. import db
 from datetime import datetime
 
 
@@ -11,6 +11,12 @@ class User(db.Model):
 
     def __repr__(self):
         return '<User {}>'.format(self.username)
+
+    def to_json(self):
+        json_user = {
+            'username': self.username,
+        }
+        return json_user
 
 
 class Post(db.Model):

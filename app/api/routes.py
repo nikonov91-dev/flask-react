@@ -3,6 +3,7 @@ import os, signal
 from json import dumps
 from app.models.models import User
 
+
 @app.route('/helloWorld', methods=['GET'])
 def get_home():
   return {'payload': 'helloworld'}
@@ -10,11 +11,13 @@ def get_home():
 
 @app.route('/login', methods=['GET','POST'])
 def get_auth():
-  users = dumps(User.query.all())
+  users = User.query.all()
+  jsoned_users = [user.to_json() for user in users]
+  test = 'var'
   return {
     'payload':
       {
-        'users': users,
+        'users': jsoned_users,
         'hello': 'hello from authpage'
       }
   }

@@ -1,4 +1,4 @@
-from app.app import db
+from . import db
 from app.models.models import User, Post
 from faker import Faker
 from random import randint
