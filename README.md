@@ -32,7 +32,7 @@ then uncomment that and run `$ flask db upgrade`. Its needed to update DB after 
 
 The instruction (above) written to run project from PyCharm.
 
-Run from the shell  
+Run from the shell  follow the official instruction: https://flask.palletsprojects.com/en/1.1.x/cli/ 
 
 ##Frontend
 
