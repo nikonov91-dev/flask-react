@@ -1,13 +1,13 @@
 # dependencies
 /node_modules
-flask_modules/venv
+/flask_modules/venv/
 /.pnp
 .pnp.js
 
 #local files
-*.db
-*.min.css
-
+/*.db
+/*.min.css
+**/*.db
 # testing
 /coverage
 
