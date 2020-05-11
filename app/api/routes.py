@@ -1,6 +1,5 @@
 from app import app
 import os, signal
-from json import dumps
 from app.models.models import User
 
 
