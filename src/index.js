@@ -5,7 +5,7 @@ import App from './js/app.js';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
-import './assets/scss/clean-blog.scss';
+import './assets/scss/index.scss';
 import $ from 'jquery';
 import Popper from 'popper.js';
 

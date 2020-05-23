@@ -7,7 +7,8 @@ import Footer from "./elements/footer";
 import Article from "./pages/article";
 import About from "./pages/about";
 import LoginPage from "./pages/login-page";
-import ApiService from "./api-service";
+import ApiService from "./utils/api-service";
+import UserProfile from "./pages/user-profile";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -22,7 +23,7 @@ export default class App extends React.Component {
   componentDidMount() {
     this.submissionService.checkAuthentication()
       .then(res => {
-        const auth = !(res.status >= 400) ? res.json() : false;
+        const auth = (res.status !== 401);
         this.setState({auth});
       })
   }
@@ -32,7 +33,7 @@ export default class App extends React.Component {
     return (
       <div className="App">
 
-        <Navbar/>
+        <Navbar isAuthenticated={this.state.auth}/>
         <Switch>
 
           <Route exact={true} path="/">
@@ -52,6 +53,10 @@ export default class App extends React.Component {
 
           <Route path="/login">
             <LoginPage submitForm={this.submissionService}/>
+          </Route>
+
+          <Route path="/user">
+            <UserProfile submitForm={this.submissionService}/>
           </Route>
 
           <Route path="/*">

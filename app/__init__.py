@@ -8,8 +8,24 @@ app = Flask(__name__)
 app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
+
+from app.models.models import User, Post
 login = LoginManager(app)
-from app.fakeUsersAndPosts import users, posts
+
+# TO INITIATE DB FOR THE 1 TIME
+# run `db init` this command as pycharm config
+#  /\
+#  |
+# and comment all actions that perform on unexisting tables
+#  |
+# \/
+
+# from app.fakeUsersAndPosts import users, add_admin
+from app.fakeUsersAndPosts import users, posts, add_admin
+add_admin()
 users()
 from . api import routes
 
+@login.user_loader
+def load_user(id):
+    return User.query.get(int(id))

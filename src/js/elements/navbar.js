@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 export default class Navbar extends React.Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <nav className="navbar navbar-expand-lg navbar-light fixed-top bg-dark" id="mainNav">
         <div className="container">
           <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                   data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
@@ -21,7 +21,7 @@ export default class Navbar extends React.Component {
                 <Link to="/about">About</Link>
               </li>
               <li className="nav-item">
-                <Link to='/login'>Login</Link>
+                {this.props.isAuthenticated ? <Link to='/user'>My account</Link> : <Link to='/login'>Login</Link>}
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="/contact">Contact</a>

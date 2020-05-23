@@ -15,7 +15,7 @@ run command: `(venv) pip3 install -r requirements.txt`
 add global variable to PyCharm: https://stackoverflow.com/questions/42708389/how-to-set-environment-variables-in-pycharm
 `FLASK_APP=__init__.py`
 
-initiate db from the shell:
+initiate db from the shell: 
 `app $ flask db init`
 
 upload developed models to DB with Migrate package:
