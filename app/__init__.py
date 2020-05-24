@@ -7,21 +7,12 @@ from flask_login import LoginManager
 app = Flask(__name__)
 app.config.from_object(Config)
 db = SQLAlchemy(app)
-migrate = Migrate(app, db)
-
 from app.models import models
+
+migrate = Migrate(app, db)
 
 login = LoginManager(app)
 
-# TO INITIATE DB FOR THE 1 TIME
-# run `db init` this command as pycharm config
-#  /\
-#  |
-# and comment all actions that perform on unexisting tables
-#  |
-# \/
-
-# from app.fakeUsersAndPosts import users, add_admin
 from app.fakeUsersAndPosts import users, add_admin
 add_admin()
 users()
