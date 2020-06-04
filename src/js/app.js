@@ -13,7 +13,7 @@ import UserProfile from "./pages/user-profile";
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.submissionService = new ApiService();
+    this.submissionService = new ApiService(this.changeState);
     this.state = {
       res: '',
       auth: false
@@ -22,12 +22,9 @@ export default class App extends React.Component {
 
   componentDidMount() {
     this.submissionService.checkAuthentication()
-      .then(res => {
-        const auth = (res.status !== 401);
-        this.setState({auth});
-      })
   }
 
+  changeState = (state) => this.setState(state);
 
   render() {
     return (
@@ -38,17 +35,11 @@ export default class App extends React.Component {
 
           <Route exact={true} path="/">
             <Header/>
-            <MainPage/>
+            <MainPage submissionService={this.submissionService} posts={this.state.posts}/>
           </Route>
 
-          <Route path="/post">
-            <Header/>
-            <Article/>
-          </Route>
-
-          <Route path='/about'>
-            <Header/>
-            <About/>
+          <Route path="/post/">
+            <Article submissionService={this.submissionService} post={this.state.post}/>
           </Route>
 
           <Route path="/login">
@@ -57,6 +48,11 @@ export default class App extends React.Component {
 
           <Route path="/user">
             <UserProfile submitForm={this.submissionService}/>
+          </Route>
+
+          <Route path='/about'>
+            <Header/>
+            <About/>
           </Route>
 
           <Route path="/*">

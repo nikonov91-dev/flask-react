@@ -1,5 +1,9 @@
 import React from "react";
-import userPic from '../../assets/img/users/user1.jpg';
+import userPic from '../../assets/img/users/me.png';
+import pic1 from '../../assets/img/users/1.jpg';
+import pic2 from '../../assets/img/users/2.jpg';
+import pic3 from '../../assets/img/users/3.jpg';
+import pic4 from '../../assets/img/users/4.jpg';
 
 export default class UserProfile extends React.Component {
   render() {
@@ -13,14 +17,14 @@ export default class UserProfile extends React.Component {
                 <div className="media align-items-end profile-header">
                   <div className="profile mr-3">
                     <img
-                      src="https://d19m59y37dris4.cloudfront.net/university/1-1-1/img/teacher-4.jpg" alt="..."
+                      src={userPic} alt="..."
                       width="130"
                       className="rounded mb-2 img-thumbnail"/>
                     <a href="#" className="btn btn-dark btn-sm btn-block">Edit profile</a>
                   </div>
                   <div className="media-body mb-5 text-white">
-                    <h4 className="mt-0 mb-0">Manuella Tarly</h4>
-                    <p className="small mb-4"><i className="fa fa-map-marker mr-2"></i>San Farcisco</p>
+                    <h4 className="mt-0 mb-0">Nikonov Alex</h4>
+                    <p className="small mb-4"><i className="fa fa-map-marker mr-2"></i>Khariv, Lyon</p>
                   </div>
                 </div>
               </div>
@@ -45,27 +49,27 @@ export default class UserProfile extends React.Component {
                 <div className="row">
                   <div className="col-lg-6 mb-2 pr-lg-1">
                     <img
-                      src="https://res.cloudinary.com/mhmd/image/upload/v1556294928/nicole-honeywill-546848-unsplash_ymprvp.jpg"
+                      src={pic1}
                       alt="" className="img-fluid rounded shadow-sm"/>
                   </div>
                   <div className="col-lg-6 mb-2 pl-lg-1"><img
-                    src="https://res.cloudinary.com/mhmd/image/upload/v1556294927/dose-juice-1184444-unsplash_bmbutn.jpg"
+                    src={pic2}
                     alt="" className="img-fluid rounded shadow-sm"/>
                   </div>
                   <div className="col-lg-6 pr-lg-1 mb-2"><img
-                    src="https://res.cloudinary.com/mhmd/image/upload/v1556294926/cody-davis-253925-unsplash_hsetv7.jpg"
+                    src={pic3}
                     alt="" className="img-fluid rounded shadow-sm"/>
                   </div>
                   <div className="col-lg-6 pl-lg-1"><img
-                    src="https://res.cloudinary.com/mhmd/image/upload/v1556294928/tim-foster-734470-unsplash_xqde00.jpg"
+                    src={pic4}
                     alt="" className="img-fluid rounded shadow-sm"/>
                   </div>
                 </div>
                 <div className="py-4">
                   <h5 className="mb-3">Recent posts</h5>
                   <div className="p-4 bg-light rounded shadow-sm">
-                    <p className="font-italic mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                    <p className="font-italic mb-0"><strong>Les Hells Angels débarquent à Paris</strong><br/>
+REPORTAGE - Des centaines de motards venus du monde entier fêtent Sonny Barger à l'origine de leur mouvement.</p>
                     <ul className="list-inline small text-muted mt-3 mb-0">
                       <li className="list-inline-item"><i className="fa fa-comment-o mr-2"></i>12 Comments</li>
                       <li className="list-inline-item"><i className="fa fa-heart-o mr-2"></i>200 Likes</li>

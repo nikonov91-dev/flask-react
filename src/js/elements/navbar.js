@@ -18,13 +18,10 @@ export default class Navbar extends React.Component {
                 <Link to="/">Home</Link>
               </li>
               <li className="nav-item">
-                <Link to="/about">About</Link>
-              </li>
-              <li className="nav-item">
                 {this.props.isAuthenticated ? <Link to='/user'>My account</Link> : <Link to='/login'>Login</Link>}
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/contact">Contact</a>
+                <Link to="/about">About</Link>
               </li>
             </ul>
           </div>

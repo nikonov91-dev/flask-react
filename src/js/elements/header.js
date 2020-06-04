@@ -11,7 +11,7 @@ export default class Header extends React.Component{
             <div className="col-lg-8 col-md-10 mx-auto">
               <div className="site-heading">
                 <h1>Clean Blog</h1>
-                <span className="subheading">A Blog Theme by Start Bootstrap</span>
+                <span className="subheading">A Blog Theme by Alex Nikonov</span>
               </div>
             </div>
           </div>
